@@ -24,7 +24,7 @@ export const App = () =>
 					{
 						searchedToDos.map(toDo =>
 						(
-							<TodoItem key={toDo.title} onDelete={() => deleteToDo(toDo.id)} onComplete={() => completeToDo(toDo.id)} completed={toDo.co} title={toDo.title}/>
+							<TodoItem key={toDo.title} onDelete={() => deleteToDo(toDo.id)} onComplete={() => completeToDo(toDo.id)} completed={toDo.completed} title={toDo.title}/>
 						))
 					}
 				</TodoList>

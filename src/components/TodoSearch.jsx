@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 
-import '../assets/styles/components/TodoSearch.css'
 import { ToDoContext } from '../context/ToDoContext';
+
+import '../assets/styles/components/TodoSearch.css';
 
 export const TodoSearch = () =>
 {

@@ -1,9 +1,7 @@
-import { createContext, useState } from "react";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import { useState } from "react";
+import { useLocalStorage } from "./useLocalStorage";
 
-const ToDoContext = createContext();
-
-const ToDoProvider = ({children}) =>
+export const useToDos = () =>
 {
 	const [toDos, saveToDos] = useLocalStorage('TODOS_V1', []);
 
@@ -31,7 +29,7 @@ const ToDoProvider = ({children}) =>
 		newToDos[toDoIndex].completed = !newToDos[toDoIndex].completed;
 
 		saveToDos(newToDos);
-	}
+	};
 
 	const deleteToDo = (id) =>
 	{
@@ -42,7 +40,7 @@ const ToDoProvider = ({children}) =>
 		newToDos.splice(toDoIndex, 1);
 
 		saveToDos(newToDos);
-	}
+	};
 
 	const addToDo = (title) =>
 	{
@@ -57,10 +55,11 @@ const ToDoProvider = ({children}) =>
 		)
 
 		saveToDos(newToDos);
-	}
+	};
 
 	return(
-		<ToDoContext.Provider value={{
+		{
+
 			totalToDos,
 			completedToDos,
 			searchValue,
@@ -71,10 +70,6 @@ const ToDoProvider = ({children}) =>
 			deleteToDo,
 			completeToDo,
 			addToDo
-		}}>
-			{children}
-		</ToDoContext.Provider>
-	)
-}
-
-export {ToDoContext, ToDoProvider};
+		}
+	);
+};

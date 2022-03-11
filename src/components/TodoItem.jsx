@@ -1,3 +1,5 @@
+import React from 'react';
+
 import '../assets/styles/components/TodoItem.css';
 
 export const TodoItem = ({title, completed, onComplete, onDelete}) =>

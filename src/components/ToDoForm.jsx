@@ -29,28 +29,28 @@ export const ToDoForm = ({ setOpenModal, addToDo }) =>
 
 	return (
 		<form onSubmit={onSubmit} >
-		<label>Escribe tu nuevo To Do</label>
-		<textarea
-			value = {newToDoValue}
-			onChange = {onChange}
-			placeholder = "Escribe una nueva tarea"
-		/>
-		<article className="TodoForm-buttonContainer">
-			<button
-			type="button"
-			className="TodoForm-button TodoForm-button-cancel"
-			onClick = {onCancel}
-			>
-			Cancelar
-			</button>
+			<label>Escribe tu nuevo To Do</label>
+			<textarea
+				value = {newToDoValue}
+				onChange = {onChange}
+				placeholder = "Escribe una nueva tarea"
+			/>
+			<article className="TodoForm-buttonContainer">
+				<button
+				type="button"
+				className="TodoForm-button TodoForm-button-cancel"
+				onClick = {onCancel}
+				>
+				Cancelar
+				</button>
 
-			<button
-			className="TodoForm-button TodoForm-button-add"
-			type= "submit"
-			>
-			Añadir
-			</button>
-		</article>
-    </form>
+				<button
+				className="TodoForm-button TodoForm-button-add"
+				type= "submit"
+				>
+				Añadir
+				</button>
+			</article>
+    	</form>
 	)
 };
